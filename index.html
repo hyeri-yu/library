@@ -918,6 +918,38 @@ footer{
   .library-plant-leaves{font-size:23px}
 }
 
+
+/* 도서관 화면 정리: 홈의 교실 선택 영역은 비활성 화면에서 보이지 않게 하고,
+   도서관 본문은 가운데 정렬된 적당한 폭으로 표시합니다. */
+.page:not(.active){display:none !important;}
+#homePage:not(.active) .section{display:none !important;}
+#libraryPage.active{
+  display:block !important;
+  width:min(900px, 94%);
+  max-width:900px;
+  margin-left:auto;
+  margin-right:auto;
+  box-sizing:border-box;
+}
+#libraryPage.active > .library-page-intro,
+#libraryPage.active > .library-progress,
+#libraryPage.active > .library-actions,
+#libraryPage.active > .bookshelf-wrap,
+#libraryPage.active > .library-editor,
+#libraryPage.active > .library-organize{
+  width:100%;
+  max-width:100%;
+  min-width:0;
+  box-sizing:border-box;
+}
+#libraryPage.active > .back{
+  display:inline-block;
+  margin-bottom:8px;
+}
+@media(max-width:600px){
+  #libraryPage.active{width:94%;padding-left:0;padding-right:0;}
+}
+
 </style>
 </head>
 
